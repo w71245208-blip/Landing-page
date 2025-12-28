@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum - Skill to Income</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Same Global Styles */
+    :root { --primary: #8b5cf6; --secondary: #10b981; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #0f172a; color: #fff; }
+    .navbar { display: flex; justify-content: center; gap: 15px; padding: 20px; background: rgba(15, 23, 42, 0.95); position: sticky; top: 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .nav-link { color: #cbd5e1; text-decoration: none; font-weight: 600; padding: 8px 12px; }
+    .nav-active { color: var(--secondary); border-bottom: 2px solid var(--secondary); }
+    
+    .container { max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+    
+    .module-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      padding: 25px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      transition: 0.3s;
+    }
+    .module-card:hover { border-color: var(--primary); transform: translateX(5px); }
+    .badge { background: var(--primary); font-size: 0.8rem; padding: 4px 10px; border-radius: 5px; margin-bottom: 10px; display: inline-block; }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="courses.html" class="nav-link nav-active">Curriculum</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h1 style="text-align:center; margin-bottom:40px;">Course <span style="color:var(--secondary);">Syllabus</span></h1>
+
+    <div class="module-card">
+      <span class="badge">Module 1</span>
+      <h3>&#129302; AI Foundations</h3>
+      <p style="color:#cbd5e1; margin-top:10px;">How to set up ChatGPT, Gemini, and Image tools on your mobile for free. No laptop needed.</p>
+    </div>
+
+    <div class="module-card">
+      <span class="badge">Module 2</span>
+      <h3>&#127912; Instant Graphic Design</h3>
+      <p style="color:#cbd5e1; margin-top:10px;">Create logos, posters, and YouTube thumbnails using AI prompts in under 60 seconds.</p>
+    </div>
+
+    <div class="module-card">
+      <span class="badge">Module 3</span>
+      <h3>&#128187; Building Landing Pages</h3>
+      <p style="color:#cbd5e1; margin-top:10px;">The exact method used to build this website. Generate code, fix bugs, and publish for free.</p>
+    </div>
+
+    <div class="module-card">
+      <span class="badge">Module 4</span>
+      <h3>&#128176; How to Sell & Earn</h3>
+      <p style="color:#cbd5e1; margin-top:10px;">Where to find clients on WhatsApp and Telegram, and how to price your new skills.</p>
+    </div>
+
+    <div style="text-align:center; margin-top:40px;">
+      <a href="index.html" style="background:var(--secondary); color:#000; padding:15px 30px; border-radius:50px; text-decoration:none; font-weight:bold;">Start Learning Now</a>
+    </div>
+  </div>
+
+</body>
+</html>

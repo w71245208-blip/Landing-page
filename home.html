@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Skill to Income</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    /* GLOBAL STYLES (Copy to all pages) */
+    :root { --primary: #8b5cf6; --secondary: #10b981; --dark: #0f172a; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Poppins', sans-serif; background: #0f172a; color: #fff; overflow-x: hidden; }
+    
+    /* VIDEO BG */
+    .video-bg { position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%; z-index: -2; opacity: 0.4; object-fit: cover; }
+    .bg-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle, rgba(15, 23, 42, 0.8), #0f172a 90%); z-index: -1; pointer-events: none; }
+
+    /* NAVBAR */
+    .navbar { display: flex; justify-content: center; gap: 15px; padding: 20px; background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid rgba(255,255,255,0.1); flex-wrap: wrap; }
+    .nav-link { color: #cbd5e1; text-decoration: none; font-weight: 600; padding: 8px 12px; transition: 0.3s; }
+    .nav-link:hover { color: #fff; text-shadow: 0 0 10px var(--primary); }
+    .nav-active { color: var(--secondary); border-bottom: 2px solid var(--secondary); }
+
+    /* HERO & LAYOUT */
+    .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; text-align: center; }
+    h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+    h1 span { background: linear-gradient(to right, #a78bfa, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    
+    /* BUTTONS */
+    .btn { padding: 14px 28px; border-radius: 50px; border: none; font-weight: 600; cursor: pointer; text-decoration: none; display: inline-block; margin: 10px; transition: 0.3s; }
+    .btn-primary { background: linear-gradient(135deg, var(--primary), #7c3aed); color: #fff; box-shadow: 0 0 20px rgba(139, 92, 246, 0.4); }
+    .btn-primary:hover { transform: scale(1.05); }
+
+    /* PRICING CARD */
+    .pricing-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 30px; max-width: 450px; margin: 40px auto; backdrop-filter: blur(10px); }
+    .price { font-size: 3.5rem; font-weight: 800; margin: 10px 0; }
+    
+    /* PROMO CODE */
+    .promo-box { display: flex; gap: 10px; margin-top: 20px; }
+    .promo-input { flex: 1; padding: 10px; border-radius: 5px; border: none; }
+    .promo-btn { background: var(--secondary); border: none; padding: 10px 20px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <video autoplay muted loop playsinline class="video-bg">
+    <source src="http://googleusercontent.com/generated_video_content/5349792401564324084" type="video/mp4">
+  </video>
+  <div class="bg-overlay"></div>
+
+  <nav class="navbar">
+    <a href="index.html" class="nav-link nav-active">Home</a>
+    <a href="courses.html" class="nav-link">Curriculum</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="contact.html" class="nav-link">Contact</a>
+  </nav>
+
+  <div class="container">
+    <h1>Turn <span>Skills</span> into Income</h1>
+    <p style="color:#cbd5e1; max-width:600px; margin:0 auto;">Join the community using AI to build assets and earn daily.</p>
+    
+    <div style="margin-top:30px;">
+      <a href="courses.html" class="btn btn-primary">View Course Modules</a>
+    </div>
+
+    <div class="pricing-card">
+      <div style="background:var(--secondary); color:#000; font-weight:800; display:inline-block; padding:5px 10px; border-radius:10px; font-size:0.8rem;">LIMITED OFFER</div>
+      <div class="price" id="displayPrice">&#8377;199</div>
+      <p>Lifetime Access</p>
+      
+      <div class="promo-box">
+        <input type="text" id="promoInput" class="promo-input" placeholder="Code: EARN">
+        <button onclick="applyPromo()" class="promo-btn">APPLY</button>
+      </div>
+      <p id="msg" style="font-size:0.9rem; margin-top:10px; height:20px;"></p>
+
+      <a href="https://payments.cashfree.com/links/d9mrnfv1s0pg_AAAAAAAOmjM" target="_blank" class="btn btn-primary" id="payBtn" style="width:100%; margin:20px 0 0 0;">Pay Now</a>
+    </div>
+  </div>
+
+  <script>
+    function applyPromo() {
+      var code = document.getElementById("promoInput").value.toUpperCase();
+      if(code === "EARN") {
+        document.getElementById("displayPrice").innerHTML = "&#8377;99";
+        document.getElementById("msg").innerHTML = "&#9989; Discount Applied!";
+        document.getElementById("msg").style.color = "#10b981";
+        document.getElementById("payBtn").href = "https://payments.cashfree.com/links/F9ms0m2f1t20_AAAAAAAOmjM";
+      } else {
+        document.getElementById("msg").innerHTML = "&#10060; Invalid Code";
+        document.getElementById("msg").style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
